@@ -1,10 +1,10 @@
-#include "main.h"
+#include "shell_main.h"
 
 /**
  * main - Entry point
  * @ac: Number of arguments
  * @av: Array of arguments
- * Return: Always 0
+ * Return: 0 if all good
  */
 int main(int ac, char **av)
 {

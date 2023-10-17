@@ -2,9 +2,9 @@
 
 /**
  * execute_function_cmd - Function to execute a command.
- * @cmd: The command name and arguments.
+ * @cmd: The command name as argument
  *
- * Return: Returns the status.
+ * Return: Returns void.
  */
 void execute_function_cmd(char **cmd)
 {
