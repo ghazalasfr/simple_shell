@@ -12,6 +12,7 @@ int main(int ac, char **av, char **env)
     char **full_cmd = NULL;
     char **path = NULL;
     struct stat st;
+    int cp=0;
     int i;
   
     (void)ac;
@@ -43,13 +44,14 @@ int main(int ac, char **av, char **env)
             exit(0);
            }
             if (stat(full_cmd[0], &st) == 0)
-            {    
+            {
             execute_function_cmd(full_cmd,env);
             
             }else {
               path = getfullpath(full_cmd[0]);
               if(path==NULL){
-                fprintf(stderr, "./hsh: not found\n");
+		cp=cp+1;
+		fprintf(stderr, "./hsh: %d: %s: not found\n", cp, full_cmd[0]);
                 for (i = 0; full_cmd[i] != NULL; i++) {
                 free(full_cmd[i]);
                 full_cmd[i] =NULL;
