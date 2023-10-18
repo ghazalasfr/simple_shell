@@ -6,7 +6,7 @@
  *
  * Return: Returns void.
  */
-void execute_function_cmd(char **cmd)
+void execute_function_cmd(char **cmd,char **env)
 {
     pid_t childpid;
     int status;
@@ -19,7 +19,7 @@ void execute_function_cmd(char **cmd)
         perror("failed");
         exit(0);
     case 0:
-        if (execve(cmd[0], cmd, NULL) == -1)
+        if (execve(cmd[0], cmd, env) == -1)
         {
             perror(cmd[0]);
 

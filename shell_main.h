@@ -14,7 +14,7 @@
 
 
 char *read_the_line_cmd();
-void execute_function_cmd(char **cmd);
+void execute_function_cmd(char **cmd, char **env);
 char **line_diviser(char *line);
 char **getfullpath(const char *command);
 
